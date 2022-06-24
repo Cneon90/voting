@@ -4,6 +4,7 @@
 
 
 **Запуск**
+
 `python manage.py runserver`
 
 #### Схема переходов
