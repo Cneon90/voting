@@ -1,0 +1,130 @@
+body
+{
+    background: #b6effb;
+}
+
+.tabs
+{
+    text-align: right;
+    float: right;
+    padding-right: 50px;
+
+
+}
+
+.tabs a
+{
+    text-decoration: none;
+    color: red;
+}
+
+.tabs a:hover
+{
+    text-decoration: none;
+    color: white;
+}
+
+.link a
+{
+    text-align: center;
+    font-size: 35px;
+    text-decoration: none;
+    color: #ff0000;
+
+
+
+}
+.link a:hover {
+    color: white;
+}
+
+
+.link
+{
+    margin: 50px;
+
+    transition: all 0.4s ease;
+
+}
+
+.link:hover
+{
+    background: #1e2125;
+    box-shadow: 0 0 10px rgba(0,0,0,1);
+    transition: all 0.4s ease;
+
+}
+
+.floor
+{
+    background: #f1bcbc;
+    width: 200px;
+}
+
+.form__wrapper {
+    color: white;
+     width: 280px;
+     height: 300px;
+     margin: 20px auto;
+     background-color: #245dff;
+     border-radius: 5px;
+     font-size: 16px;
+	 box-shadow: 0 0 10px rgba(0,0,0,1);
+     transition: all 0.4s ease;
+}
+
+.form__wrapper:hover {
+     background-color: #fa6161;
+
+     border-radius: 5px;
+     font-size: 16px;
+	 box-shadow: 0 0 10px rgba(50, 80, 236, 1);
+     transition: all 0.4s ease;
+}
+
+
+ ul {
+    list-style-type: none;
+}
+
+
+.form__line {
+    padding: 8px 8px 8px 8px;
+
+}
+
+.form__line > label {
+     padding: 8px 8px 8px 0;
+}
+
+.form__line > input {
+     width: 200px;
+     background: #f1bcbc;
+}
+
+
+ #btnEnter {
+     background: #de3535;
+     color: #fff;
+     border: 5px;
+     margin-top: 50px;
+     padding: 8px 8px 8px 8px;
+
+
+	 box-shadow: 0 0 10px rgba(0,0,0,0.6);
+	 transition: all 1s ease;
+	 width: 220px;
+}
+
+#btnEnter:Hover
+{
+    background: #0672f5;
+	box-shadow: 3px 3px 10px rgba(0,0,0,0.6);
+	transition: all 0.4s ease;
+	
+}
+
+#Footer
+{
+	text-align:center;
+}

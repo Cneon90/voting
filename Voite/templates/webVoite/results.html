@@ -1,0 +1,44 @@
+{% extends "webVoite/Pattern.html" %}
+     {% block forms %}
+
+
+
+
+<div class="fon">
+
+<script>
+setTimeout(function(){
+	location.reload();
+}, 3000);
+</script>
+
+    <div class="result boy">
+       <div class="head_box">  За мальчика </div>
+
+    <br>
+     <div class="list">
+        {% for user in boy %}
+
+         {{ forloop.counter }} . {{ user.IP }} -  {{ user.Name }} <div class="tabs"> <a href="#{{user.id}}" onclick="delete_post({{user.id}})">Удалить </a>  </div>  <br>  <br>
+
+         {% endfor %}
+    </div>
+
+    </div>
+
+      <div class="result girl">
+          <div class="head_box"> За девочку </div>
+        <br>
+
+       <div class="list">
+        {% for user in girl %}
+
+         {{ forloop.counter }} . {{ user.IP }} -  {{ user.Name }} <div class="tabs"> <a href="#{{user.id}}" onclick="delete_post({{user.id}})">Удалить </a>  </div>  <br>  <br>
+
+         {% endfor %}
+           </div>
+    </div>
+</div>
+
+
+ {% endblock %}

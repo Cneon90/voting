@@ -1,0 +1,35 @@
+{% extends "webVoite/Pattern.html" %}
+     {% block forms %}
+
+<div class="form__wrapper">
+
+
+
+
+   <form method="post" action="/succeess">
+        {% csrf_token %}
+
+
+   <ul>
+  <li class="form__line">
+
+    <label for="name">{{ form.Name.label }}</label>
+    {{ form.Name }}
+  </li>
+
+  </li>
+  <li class="form__line">
+    <label for="name">{{ form.floor.label }}</label>
+     {{ form.floor }}
+  </li>
+
+    <li class="form__line">
+    <button class="btn" type="submit" id="btnEnter">Голосовать</button>
+    </li>
+  </ul>
+
+
+   </form>
+</div>
+
+ {% endblock %}

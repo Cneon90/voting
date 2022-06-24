@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Голосование</title>
+            <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="stylesheet" href="{% static '/style/main.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static '/style/styles.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static '/style/forms.css' %}" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{% static '/js/chart.min.js'%}"></script>
+    <script src="{% static '/js/chart.js'%}"></script>
+    <script src="{% static '/js/delete_post.js'%}"></script>
+
+
+</head>
+<body>
+
+<div class="head">
+     <h1>Голосование</h1>
+
+</div>
+{% block forms %}
+
+	 {% endblock %}
+
+
+
+</body>
+</html>

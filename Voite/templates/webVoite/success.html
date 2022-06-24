@@ -1,0 +1,20 @@
+{% extends "webVoite/Pattern.html" %}
+     {% block forms %}
+
+<div class="form__wrapper">
+
+    <div class="form__wrapper">
+    <div class="Name"> {{Name}} </div>
+    <div class="answer">
+        Вы проголосовали за {{ floor }}
+    </div>
+
+    <div class="chek">
+        <img src="static/img/children.png">
+    </div>
+
+    <div class="link">
+        <a href="{% url 'chart' %}"" > Диаграмма </a>
+    </div>
+</div>
+ {% endblock %}

@@ -1,0 +1,121 @@
+{% extends "webVoite/Pattern.html" %}
+     {% block forms %}
+
+
+
+<div class="fon">
+    <div class="chart">
+         <canvas id="myChart"> </canvas>
+
+        <script>
+
+
+     const ctx = document.getElementById('myChart').getContext('2d');
+
+        const myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Мальчик', 'Девочка',],
+                datasets: [{
+                    label: 'Голосование',
+                    data: [0, 0],
+
+
+                     backgroundColor: [
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 99, 132, 1)',
+
+
+                    ],
+                        borderColor: [
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 99, 132, 1)',
+
+
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+
+
+
+
+let timerId = setInterval(() => {
+        // Создаём объект класса XMLHttpRequest
+    const request = new XMLHttpRequest();
+
+
+        /*  Составляем строку запроса и кладем данные, строка состоит из:
+пути до файла обработчика ? имя в GET запросе где будет лежать значение запроса id_product и
+через & мы передаем количество qty_product. */
+        const url = "/api/count";
+        request.responseType =	"json";
+        /* Здесь мы указываем параметры соединения с сервером, т.е. мы указываем метод соединения GET,
+а после запятой мы указываем путь к файлу на сервере который будет обрабатывать наш запрос. */
+        request.open('GET', url);
+
+// Указываем заголовки для сервера, говорим что тип данных, - контент который мы хотим получить должен быть не закодирован.
+        request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+// Здесь мы получаем ответ от сервера на запрос, лучше сказать ждем ответ от сервера
+        request.addEventListener("readystatechange", () => {
+
+            /*   request.readyState - возвращает текущее состояние объекта XHR(XMLHttpRequest) объекта,
+ бывает 4 состояния 4-е состояние запроса - операция полностью завершена, пришел ответ от сервера,
+ вот то что нам нужно request.status это статус ответа,
+ нам нужен код 200 это нормальный ответ сервера, 401 файл не найден, 500 сервер дал ошибку и прочее...   */
+            if (request.readyState === 4 && request.status === 200) {
+
+                // выводим в консоль то что ответил сервер
+                let obj = request.response;
+                console.log(obj);
+                console.log(obj.Boy);
+                console.log(obj.Girl);
+
+
+
+       //     addData(Chart,'sfs',[10,20]);
+
+        myChart.data.datasets[0].data[0] = obj.Boy; // Would update the first dataset's value of 'March' to be 50
+                myChart.data.datasets[0].data[1] = obj.Girl;
+        myChart.update(); // Calling update now animates the position of March from 90 to 50.
+
+
+
+         //myChart.data.datasets[0].data.push(10, 25);
+           //  myChart.data.datasets[0].data = [random(), random(), random(), random(), random()];
+            //    myChart.datasets[0].bars[0].value = 50;
+
+      // re-render the chart
+         myChart.update();
+
+
+            }
+        });
+
+// Выполняем запрос
+        request.send();
+    }
+
+    , 1000);
+
+
+
+
+        </script>
+    </div>
+
+
+</div>
+
+
+ {% endblock %}
